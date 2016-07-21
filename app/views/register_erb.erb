@@ -1,0 +1,34 @@
+<header>
+  <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
+</header>
+
+<h2> Wellcome, lets do your register! </h2>
+
+  <% if @bulean %>
+    <p style="color:red">Tus datos no son los correctos o estan incompletos.</p>
+    <% @bulean = false %>
+  <%end %>
+
+  <p id="html"></p>
+
+  <form id="target" action="/register" method="post">
+   
+    Lets join us!:
+    <br>
+    <p>I am ...</p>
+
+    <input id="person" type="radio" name="iam" value="person" > Person<br>
+    <input id="enterprise" type="radio" name="iam" value="enterprise"> Enterprise<br>
+    <p>E - Mail</p><input type="email" name="mail_user" placeholder="ejemplo@email.com"><% if @bulean2 %>
+    <a style="color:red"> El usuario ya fue registrado</a>
+    <% @bulean2 = false %>
+  <%end %><br>
+    <p>Your Id for Peacock.</p><input type="text" name="pk_id" placeholder="Peack Id"> *pk  <% if @bulean3 %>
+    <a style="color:red"> Ya fue registrado el *pk</a>
+    <% @bulean3 = false %>
+  <%end %><br>
+    <p>Password</p><input type="password" name="pass_user" ><br>
+    <br>
+    <input type="submit" value="Join!" class="btn"> <br>
+
+  </form>

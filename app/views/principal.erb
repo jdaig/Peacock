@@ -1,0 +1,26 @@
+<header>
+  <img id="logo" style="height: 350px" src="/img/Peacock.png" >
+</header>
+<h1>Wellcome to Peacock.</h1>
+  <p>.... About <i>yourself!</i></p>
+
+  <p id="html"></p> <!-- En esta parte se puede adicionar algun texto -->
+  
+  <% if @exit %>
+  <p style="color:red">User Logout.</p>
+  <% @exit = false %>
+  <%end %>
+
+<!-- En esta forma se elimina ir a una pagina de registro -->
+  <form action="/login" method="post">
+    <input name="id_user_access" type="text" placeholder="E-mail">
+    <input name="password_user_access" type="password" >
+    <input type="submit" value="Log in" class="btn">
+    <br> 
+  </form> 
+  <br>
+<!-- En esta se accede a la pagina de registro -->
+  <form action="/join_us" method="get">
+    <input type="submit" value="Join us!" class="btn">
+    <br> 
+  </form>

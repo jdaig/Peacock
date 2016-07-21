@@ -1,0 +1,15 @@
+<header>
+  <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
+</header>
+<% person = User.find(@employee_id)%>
+<h1> Wall of <%= person.infoper.name_per %></h1>
+
+<br>
+<% if person %>
+<% @current_user.reputation.map do |reputation|%>
+<a href=""><%= reputation.ocupation %></a><br>
+Average: <br>
+<a><%= reputation.description %></a>
+  <%end%>
+<%end%>
+<br>

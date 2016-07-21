@@ -1,0 +1,37 @@
+<header>
+  <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
+</header>
+
+<h2> Allow us to know about your enterprise. </h2>
+
+<p>Los incisos marcados con # son opcionales.</p>
+
+  <p id="html"></p>
+
+  <form id="target" action="/register/info" method="post">
+  
+    <input type="text" name="name_ent" placeholder="Name"><br>
+    <p>Your Id for Peacock.</p><input type="text" name="pk_id" placeholder="Peack Id Enterprise"> *pk<br>
+    <p>CEO:</p>
+    <p>Use your Id for Peacock.</p><input type="text" name="ceo_ent" placeholder="ejemplo*pk"><br>
+    
+    <p>Coutry</p><input name="country" type="radio" value="MX"> Mexico<br>
+      <input name="country" type="radio" value="US"> United States<br>
+
+    <p>Adress.</p><input type="text" name="state" placeholder="State"><br>
+    <input type="text" name="street" placeholder="Street"><br>
+    <input type="text" name="n_int" placeholder="Num int"><br>
+    <input type="text" name="n_ext" placeholder="Num ext"><br>
+
+    <p>What kind of enterprise it is?</p>
+    <input id="public" type="radio" name="type_e" value="public" > Public<br>
+    <input id="private" type="radio" name="type_e" value="private"> Private<br>
+    <input id="web" type="radio" name="type_e" value="web" > Web<br><br>
+
+    <input type="text" name="page" placeholder="Web Page"><br>
+
+    <textarea rows="4" cols="50" name="description" placeholder="Description"></textarea>#<br>
+    <br>
+    <input type="submit" value="Join!" class="btn"> <br>
+
+  </form>
