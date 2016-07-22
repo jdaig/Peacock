@@ -1,0 +1,41 @@
+<header>
+  <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
+</header>
+<% person = User.find(@path_pid)%>
+<h1> Wall of <%= person.infoper.name_per %></h1>
+<% rep = Reputation.find(@path_rid)%>
+<h2> Evaluation for <%=rep.ocupation%></h2>
+<br>
+<form id="evaluation" action="/evaluation/<%=person.id%>-<%=rep.id%>" method="post">
+<h3>Puntuality</h3>  
+  <input type="radio" name="puntuality" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="puntuality" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="puntuality" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="puntuality" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="puntuality" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <textarea rows="4" cols="40" name="puntuality_com" placeholder="Add a comment"></textarea>
+
+<br>
+<h3>Performance</h3>  
+  <input type="radio" name="performance" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="performance" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="performance" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="performance" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="performance" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <textarea rows="4" cols="40" name="performance_com" placeholder="Add a comment"></textarea>
+
+<br>
+<h3>Personal image</h3> 
+  <input type="radio" name="per_img" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="per_img" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="per_img" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="per_img" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input type="radio" name="per_img" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <textarea rows="4" cols="40" name="per_img_com" placeholder="Add a comment"></textarea>
+
+  <br>
+  <br>
+  <input type="submit" value="Evaluate!" class="btn">
+</form>
+
+

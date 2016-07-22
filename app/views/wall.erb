@@ -1,15 +1,29 @@
 <header>
   <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
 </header>
-<% person = User.find(@employee_id)%>
+<% relation = Relation.find(@relation_id)%>
+<% per_id = relation.user_id%>
+<% person = User.find(per_id)%>
 <h1> Wall of <%= person.infoper.name_per %></h1>
 
+<div>
+<p>Personal information.</p>
 <br>
-<% if person %>
-<% @current_user.reputation.map do |reputation|%>
-<a href=""><%= reputation.ocupation %></a><br>
-Average: <br>
-<a><%= reputation.description %></a>
-  <%end%>
+<% info = person.infoper %>
+Name: <%= info.name_per %> <%= info.lname_per%><br>
+Born in: <%= info.born %><br>
+ocupation: <%= info.ocupation %><br>
+Social stat: <%= info.soc_stat %><br>
+Location: <%= info.country %><br>
+Personal Page: <%= info.page %><br>
+<%= info.description %><br>
+<br>
+</div>
+
+<div>
+<p>Reputation.</p>
+<br>
+<% person.reputation.each do |reputation|%>
+<a href="/reputation/<%=person.id%>-<%=reputation.id%>"><%= reputation.ocupation%></a>
 <%end%>
-<br>
+</div>

@@ -10,10 +10,13 @@ post '/register' do
 
   if user_am == "person"
     peacock_in = User.new(mail: user_mail, pk_id: user_pk, password: user_pass)
-  elsif user_am == "enterprise" 
+  elsif user_am == "enterprise"
+    p '$'*60
     peacock_in = Enterprise.new(mail: user_mail, pk_id: user_pk, password: user_pass)
   end
-
+  p '*'*50
+  p peacock_in
+  p '*'*50
   if log_nil?(user_am,user_mail,user_pk,user_pass) && !exist?(user_mail)
     peacock_in.save
     session[:id] = peacock_in.id
@@ -46,8 +49,7 @@ post '/register/info' do
   Info.create(enterprise_id: enter_id, name_ent: name_ent, pk_id: pk_id, ceo_ent: ceo_ent,
       country: country, state: state, street: street, n_int: n_int,
       n_ext: n_ext, page: page, type: type, description: description )
-  current_user
-  redirect to '/secret/User'
+  redirect to '/secret/Enterprise'
 end
 
 post '/register/info_per' do
@@ -68,7 +70,7 @@ post '/register/info_per' do
   Infoper.create(user_id: user_id, name_per: name_per, lname_per: lname_per, born: born, ocupation: ocupation, 
       soc_stat: soc_stat, pk_id: pk_id, country: country, state: state, 
       street: street, n_int: n_int, n_ext: n_ext, page: page, description: description )
-  redirect to '/secret/Enterprise'
+  redirect to '/secret/User'
 end
 
 post '/login' do
