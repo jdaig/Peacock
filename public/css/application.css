@@ -43,3 +43,11 @@ textarea {
   border: none;
   padding: 10px;
 }
+
+#add_employee_btn {
+  width: 180px;
+}
+
+#add_ocupation_btn {
+  width: 170px;
+}

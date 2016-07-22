@@ -7,7 +7,7 @@ class CreateInfoper < ActiveRecord::Migration
       p.string :born
       p.string :ocupation
       p.string :soc_stat
-      p.string :pk_id,  :unique => true
+      # p.string :pk_id,  :unique => true
       p.string :country
       p.string :state
       p.string :street

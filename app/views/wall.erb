@@ -4,7 +4,7 @@
 <% relation = Relation.find(@relation_id)%>
 <% per_id = relation.user_id%>
 <% person = User.find(per_id)%>
-<h1> Wall of <%= person.infoper.name_per %></h1>
+<h1> Wall of <%= person.infoper.name_per %> <%= person.infoper.lname_per %></h1>
 
 <div>
 <p>Personal information.</p>
@@ -24,6 +24,6 @@ Personal Page: <%= info.page %><br>
 <p>Reputation.</p>
 <br>
 <% person.reputation.each do |reputation|%>
-<a href="/reputation/<%=person.id%>-<%=reputation.id%>"><%= reputation.ocupation%></a>
+<a href="/reputation/<%=@relation_id%>_<%=reputation.id%>"><%= reputation.ocupation%></a>
 <%end%>
 </div>

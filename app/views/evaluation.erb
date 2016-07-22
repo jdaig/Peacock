@@ -1,41 +1,48 @@
 <header>
   <a href="/"><img style="height: 100px" id="logo" src="/img/Peacock.png"></a>
 </header>
-<% person = User.find(@path_pid)%>
+<% relation = Relation.find(@relation_id)%>
+<% per_id = relation.user_id%>
+<% person = User.find(per_id)%>
 <h1> Wall of <%= person.infoper.name_per %></h1>
-<% rep = Reputation.find(@path_rid)%>
-<h2> Evaluation for <%=rep.ocupation%></h2>
+<% rep = Reputation.find(@reputation_id)%>
+<h2> <i>Peack me</i> for <%=rep.ocupation%></h2>
 <br>
-<form id="evaluation" action="/evaluation/<%=person.id%>-<%=rep.id%>" method="post">
+<form id="evaluation" action="" method="post">
+  <input id="shadow" type="hidden" name="rela_reputation" value="<%=@relation_id%>_<%=rep.id%>">
 <h3>Puntuality</h3>  
-  <input type="radio" name="puntuality" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="puntuality" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="puntuality" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="puntuality" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="puntuality" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <input id="puntuality" type="radio" name="puntuality" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="puntuality" type="radio" name="puntuality" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="puntuality" type="radio" name="puntuality" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="puntuality" type="radio" name="puntuality" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="puntuality" type="radio" name="puntuality" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
   <textarea rows="4" cols="40" name="puntuality_com" placeholder="Add a comment"></textarea>
 
 <br>
 <h3>Performance</h3>  
-  <input type="radio" name="performance" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="performance" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="performance" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="performance" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="performance" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <input id="performance" type="radio" name="performance" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="performance" type="radio" name="performance" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="performance" type="radio" name="performance" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="performance" type="radio" name="performance" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="performance" type="radio" name="performance" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
   <textarea rows="4" cols="40" name="performance_com" placeholder="Add a comment"></textarea>
 
 <br>
 <h3>Personal image</h3> 
-  <input type="radio" name="per_img" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="per_img" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="per_img" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="per_img" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
-  <input type="radio" name="per_img" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
+  <input id="per_img" type="radio" name="per_img" value="1"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="per_img" type="radio" name="per_img" value="2"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="per_img" type="radio" name="per_img" value="3"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="per_img" type="radio" name="per_img" value="4"><img style="height: 30px" id="logo" src="/img/Star.png">
+  <input id="per_img" type="radio" name="per_img" value="5"><img style="height: 30px" id="logo" src="/img/Star.png"><br><br>
   <textarea rows="4" cols="40" name="per_img_com" placeholder="Add a comment"></textarea>
 
   <br>
   <br>
-  <input type="submit" value="Evaluate!" class="btn">
+  <input id="evaluate_btn" type="submit" value="Evaluate!" class="btn">
 </form>
 
-
+<form id="finish" style="display:none" action="/secret/Enterprise" method="get">
+<p>You Peack finished!</p>
+<br>
+<input id="back_btn" type="submit" value="Back" class="btn">  
+</form>

@@ -4,6 +4,7 @@ class CreateReputation < ActiveRecord::Migration
       r.belongs_to :user, index: true
       r.belongs_to :enterprise, index: true
       r.string :ocupation
+      r.string :average
       r.string :description
       r.timestamp
     end
